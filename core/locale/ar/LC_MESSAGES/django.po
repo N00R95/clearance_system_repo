@@ -1,0 +1,398 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-10-30 10:44+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#: .\core\models.py:8 .\core\templates\core\manager\update_approval.html:116
+msgid "Pending"
+msgstr "معلق"
+
+#: .\core\models.py:9 .\core\models.py:17
+#: .\core\templates\core\manager\update_approval.html:111
+#: .\core\templates\core\manager\update_approval.html:117
+msgid "Approved"
+msgstr "تمت الموافقة"
+
+#: .\core\models.py:10 .\core\models.py:18
+#: .\core\templates\core\manager\update_approval.html:119
+msgid "Rejected"
+msgstr "مرفوض"
+
+#: .\core\models.py:14
+msgid "Pending for HR initial approval"
+msgstr "بإنتظار موافقة الموارد البشرية الأولية"
+
+#: .\core\models.py:15
+msgid "Pending for other departments approval"
+msgstr "بإنتظار موافقة باقي الأقسام"
+
+#: .\core\models.py:16
+msgid "Pending for HR final approval"
+msgstr "بإنتظار موافقة الموارد البشرية النهائية"
+
+#: .\core\models.py:21
+msgid "Select Clearance Type"
+msgstr "اختر نوع الإخلاء"
+
+#: .\core\models.py:22
+msgid "Annual Vacation"
+msgstr "إجازة سنوية"
+
+#: .\core\models.py:23
+msgid "Compensatory Leave"
+msgstr "إجازة تعويضية"
+
+#: .\core\models.py:24
+msgid "End of Services"
+msgstr "نهاية الخدمة"
+
+#: .\core\models.py:25
+msgid "Commissioning"
+msgstr "تكليف"
+
+#: .\core\models.py:26
+msgid "Redeployment"
+msgstr "نقل"
+
+#: .\core\models.py:27
+msgid "Delegation"
+msgstr "ايفاد"
+
+#: .\core\models.py:31
+msgid "Select your Job Title"
+msgstr "اختر المسمى الوظيفي"
+
+#: .\core\models.py:32
+msgid "others"
+msgstr "الأقسام الأخرى"
+
+#: .\core\models.py:33
+msgid "Administrator"
+msgstr "إداري"
+
+#: .\core\models.py:34
+msgid "Assistant"
+msgstr "مساعد"
+
+#: .\core\models.py:35
+msgid "Technician"
+msgstr "فني"
+
+#: .\core\models.py:36
+msgid "Specialist"
+msgstr "إخصائي"
+
+#: .\core\models.py:37
+msgid "Senior Specialist"
+msgstr "إخصائي أول"
+
+#: .\core\models.py:38
+msgid "Specialist Consultant"
+msgstr "إخصائي استشاري"
+
+#: .\core\models.py:39
+msgid "Pharmacist"
+msgstr "صيدلي"
+
+#: .\core\models.py:40
+msgid "Senior Pharmacist"
+msgstr "صيدلي أول"
+
+#: .\core\models.py:41
+msgid "Consultant Pharmacist"
+msgstr " طبيب استشاري"
+
+#: .\core\models.py:43
+msgid "Medical Departments"
+msgstr "الأقسام الطبية"
+
+#: .\core\models.py:44
+msgid "Specialist Doctor"
+msgstr "طبيب إخصائي"
+
+#: .\core\models.py:45
+msgid "Consultant Doctor"
+msgstr " طبيب استشاري"
+
+#: .\core\models.py:46
+msgid "Resident"
+msgstr "طبيب مقيم"
+
+#: .\core\models.py:47
+msgid "Nursing Departments"
+msgstr "أقسام التمريض"
+
+#: .\core\models.py:48
+msgid "Health Aide"
+msgstr "مساعد صحي"
+
+#: .\core\models.py:49
+msgid "Nursing Technician"
+msgstr "فني تمريض"
+
+#: .\core\models.py:50
+msgid "Specialist Nurse"
+msgstr "إخصائي تمريض"
+
+#: .\core\models.py:51
+msgid "Senior Specialist Nurse"
+msgstr "إخصائي أول تمريض"
+
+#: .\core\models.py:52
+msgid "Consultant Specialist Nurse"
+msgstr "إخصائي استشاري تمريض"
+
+#: .\core\models.py:57
+msgid "Select Gender"
+msgstr "اختر الجنس"
+
+#: .\core\models.py:58
+msgid "Female"
+msgstr "انثى"
+
+#: .\core\models.py:59
+msgid "Male"
+msgstr "ذكر"
+
+#: .\core\templates\core\employee\clearances.html:11
+#: .\core\templates\core\manager\approvals.html:26
+msgid "Clearance Number"
+msgstr "رقم الطلب"
+
+#: .\core\templates\core\employee\clearances.html:12
+#: .\core\templates\core\employee\pdfreport.html:84
+#: .\core\templates\core\employee\pdfreport.html:96
+#: .\core\templates\core\employee\show_clearance.html:101
+#: .\core\templates\core\manager\approvals.html:29
+msgid "Status"
+msgstr "حالة الطلب"
+
+#: .\core\templates\core\employee\clearances.html:13
+#: .\core\templates\core\employee\pdfreport.html:81
+msgid "Creation Date"
+msgstr "تاريخ الإنشاء"
+
+#: .\core\templates\core\employee\clearances.html:14
+#: .\core\templates\core\employee\clearances.html:28
+#: .\core\templates\core\employee\search_clearances.html:17
+#: .\core\templates\core\manager\approvals.html:52
+msgid "Check"
+msgstr "تحقق"
+
+#: .\core\templates\core\employee\create_clearance.html:14
+#: .\core\templates\core\index.html:29 .\core\templates\core\index.html:32
+msgid "New Clearance"
+msgstr "إخلاء طرف جديد"
+
+#: .\core\templates\core\employee\create_clearance.html:17
+#: .\core\templates\core\employee\show_clearance.html:27
+#: .\core\templates\core\manager\update_approval.html:35
+msgid "Full Name"
+msgstr "الاسم الكامل"
+
+#: .\core\templates\core\employee\create_clearance.html:19
+#: .\core\templates\core\employee\pdfreport.html:76
+#: .\core\templates\core\employee\search_clearances.html:10
+#: .\core\templates\core\employee\show_clearance.html:31
+#: .\core\templates\core\manager\approvals.html:28
+#: .\core\templates\core\manager\update_approval.html:39
+msgid "Employee Number"
+msgstr "الرقم الوظيفي"
+
+#: .\core\templates\core\employee\create_clearance.html:22
+#: .\core\templates\core\employee\show_clearance.html:35
+#: .\core\templates\core\manager\update_approval.html:43
+msgid "Gender"
+msgstr "الجنس"
+
+#: .\core\templates\core\employee\create_clearance.html:25
+#: .\core\templates\core\employee\show_clearance.html:39
+#: .\core\templates\core\manager\update_approval.html:47
+msgid "Clearance type"
+msgstr "نوع الإخلاء"
+
+#: .\core\templates\core\employee\create_clearance.html:28
+#: .\core\templates\core\employee\show_clearance.html:43
+#: .\core\templates\core\manager\update_approval.html:51
+msgid "Acknowledgment Number"
+msgstr "رقم الإقرار"
+
+#: .\core\templates\core\employee\create_clearance.html:31
+#: .\core\templates\core\employee\show_clearance.html:47
+#: .\core\templates\core\manager\update_approval.html:55
+msgid "Start Date"
+msgstr "تاريخ البداية"
+
+#: .\core\templates\core\employee\create_clearance.html:34
+#: .\core\templates\core\employee\show_clearance.html:51
+#: .\core\templates\core\manager\update_approval.html:59
+msgid "End Date"
+msgstr "تاريخ النهاية"
+
+#: .\core\templates\core\employee\create_clearance.html:37
+#: .\core\templates\core\employee\show_clearance.html:55
+#: .\core\templates\core\manager\update_approval.html:63
+msgid "Job Title"
+msgstr "المسمى الوظيفي"
+
+#: .\core\templates\core\employee\create_clearance.html:40
+#: .\core\templates\core\employee\pdfreport.html:97
+#: .\core\templates\core\employee\show_clearance.html:59
+#: .\core\templates\core\employee\show_clearance.html:102
+#: .\core\templates\core\manager\update_approval.html:67
+msgid "Department"
+msgstr "القسم"
+
+#: .\core\templates\core\employee\create_clearance.html:45
+#: .\core\templates\core\employee\show_clearance.html:68
+#: .\core\templates\core\manager\update_approval.html:76
+msgid "Nationality"
+msgstr "الجنسية"
+
+#: .\core\templates\core\employee\create_clearance.html:49
+#: .\core\templates\core\employee\show_clearance.html:72
+#: .\core\templates\core\manager\update_approval.html:80
+msgid "Phone Number"
+msgstr "رقم الجوال"
+
+#: .\core\templates\core\employee\create_clearance.html:52
+#: .\core\templates\core\employee\show_clearance.html:76
+#: .\core\templates\core\manager\update_approval.html:84
+msgid "attachments"
+msgstr "المرفقات"
+
+#: .\core\templates\core\employee\create_clearance.html:57
+#: .\core\templates\core\employee\pdfreport.html:95
+#: .\core\templates\core\employee\show_clearance.html:84
+#: .\core\templates\core\employee\show_clearance.html:100
+#: .\core\templates\core\manager\update_approval.html:92
+msgid "Notes"
+msgstr "الملاحظات"
+
+#: .\core\templates\core\employee\create_clearance.html:62
+msgid "By creating a new request you agree to our"
+msgstr "بإنشائك هذا الطلب فأنت توافق على"
+
+#: .\core\templates\core\employee\create_clearance.html:63
+msgid "Terms & Privacy"
+msgstr "الشروط والإحكام"
+
+#: .\core\templates\core\employee\create_clearance.html:67
+msgid "Cancel"
+msgstr "إلغاء"
+
+#: .\core\templates\core\employee\create_clearance.html:68
+#: .\core\templates\core\manager\update_approval.html:133
+msgid "Submit"
+msgstr "إرسال"
+
+#: .\core\templates\core\employee\pdfreport.html:50
+msgid "Clearance Report"
+msgstr "تقرير إخلاء الطرف"
+
+#: .\core\templates\core\employee\pdfreport.html:60
+msgid "Minsitry of Health "
+msgstr "وزارة الصحة"
+
+#: .\core\templates\core\employee\pdfreport.html:61
+msgid "Hail Health Cluster"
+msgstr "تجمع حائل الصحي"
+
+#: .\core\templates\core\employee\pdfreport.html:63
+msgid "Maternity and Children Hospital"
+msgstr "مستشفى الولادة و الأطفال"
+
+#: .\core\templates\core\employee\pdfreport.html:70
+#: .\core\templates\core\manager\approvals.html:27
+msgid "Name"
+msgstr "الاسم الكامل"
+
+#: .\core\templates\core\employee\pdfreport.html:148
+msgid "Hospital Director of Maternity and Children Hospital-Hail"
+msgstr "مدير مستشفى الولادة و الأطفال بحائل "
+
+#: .\core\templates\core\employee\pdfreport.html:159
+msgid "This page is electronically certified "
+msgstr "هذه الصفحة مصدقة إلكترونيًا"
+
+#: .\core\templates\core\employee\search_clearances.html:13
+msgid "We'll never share your Employee No. with anyone else."
+msgstr "لن تتم مشاركة رقمك الوظيفي مع الاخرين"
+
+#: .\core\templates\core\employee\show_clearance.html:12
+#: .\core\templates\core\manager\update_approval.html:20
+msgid "Clearance Info"
+msgstr "بيانات الطلب"
+
+#: .\core\templates\core\employee\show_clearance.html:19
+#: .\core\templates\core\manager\update_approval.html:27
+msgid "Clearance ID"
+msgstr "رقم طلب الإخلاء"
+
+#: .\core\templates\core\employee\show_clearance.html:23
+#: .\core\templates\core\manager\update_approval.html:31
+msgid "Clearance Status"
+msgstr "حالة طلب الإخلاء"
+
+#: .\core\templates\core\index.html:20 .\core\templates\core\index.html:23
+msgid "Approvals"
+msgstr "الموافقات"
+
+#: .\core\templates\core\index.html:37 .\core\templates\core\index.html:40
+msgid "Login"
+msgstr "تسجيل الدخول للأقسام"
+
+#: .\core\templates\core\index.html:47 .\core\templates\core\index.html:50
+msgid "Clearances"
+msgstr "طلبات الإخلاء"
+
+#: .\core\templates\core\manager\approvals.html:5
+msgid "Approvals List"
+msgstr " قائمة الموافقات"
+
+#: .\core\templates\core\manager\approvals.html:30
+msgid "Details"
+msgstr " تفاصيل الطلب"
+
+#~| msgid "Rejected"
+#~ msgid "Reject"
+#~ msgstr "مرفوض"
+
+#~ msgid "Additional information"
+#~ msgstr "معلومات حول الطلب"
+
+#~ msgid "Guarantor Name"
+#~ msgstr "اسم الكفيل"
+
+#~ msgid "Head of Human Resources"
+#~ msgstr "مساعد مدير المستشفى للموارد البشرية"
+
+#~ msgid "Assigned"
+#~ msgstr "تكليف"
+
+#~ msgid "Shift"
+#~ msgstr "نقل"
+
+#~ msgid "Efad"
+#~ msgstr "إيفاد"
+
+#~ msgid "Administrative Departments "
+#~ msgstr "الأقسام الإدارية"
+
+#~ msgid "Clearance Type"
+#~ msgstr "نوع الإخلاء"

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block content %}
+
+    <hr>
+    <form class="p-5 m-5" method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+
+            <label>{% trans 'Employee Number' %}</label>
+            {{ form.employee_number }}
+            <small class="form-text text-muted">
+                {% trans "We'll never share your Employee No. with anyone else." %}
+            </small>
+
+            <div class="clearfix">
+                <button type="submit" class="btn btn-primary">{% trans 'Check' %}</button>
+            </div>
+        </div>
+    </form>
+
+
+
+{% endblock %}

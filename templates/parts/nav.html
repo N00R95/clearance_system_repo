@@ -1,0 +1,74 @@
+<!-- Navbar static  -->
+{% load static %}
+{% load i18n %}
+
+{% get_current_language as LANGUAGE_CODE %}
+<nav class="navbar navbar-expand-md  bg-light mb-4 ">
+    <div class="container-fluid">
+        <a class="navbar-brand w-20" href="{% url 'core:index' %}"><img style="width: 60px;"
+                                                                        src="{% static 'images/HHC_logo.svg' %}" alt=""></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <!-- modification START -->
+            <span class="visually-hidden">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <!-- modification END -->
+        </button>
+        <div class="collapse navbar-collapse text-black" id="navbarCollapse">
+            <ul class="navbar-nav me-auto mb-2 mb-md-0 text-dark">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{% url 'core:index' %}">{% trans 'Home' %}</a>
+                </li>
+                {% if request.user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'core:manager-approvals' %}">{% trans 'Approvals' %}</a>
+                    </li>
+
+                {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link"
+                           href="{% url 'core:employee-create-clearance' %}">{% trans 'New Clearance' %}</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link"
+                           href="{% url 'core:employee-search-clearances' %}">{% trans 'Clearances' %}</a>
+                    </li>
+                {% endif %}
+            </ul>
+            <ul class="navbar-nav navbar-text">
+                {% if LANGUAGE_CODE == 'en' %}
+                    <li class="nav-item">
+                        <span class="nav-link pointer" onclick="show_arabic_language()">العربية</span>
+                    </li>
+                {% else %}
+                    <li class="nav-item">
+                        <span class="nav-link pointer" onclick="show_english_language()">English</span>
+                    </li>
+                {% endif %}
+
+                {% if request.user.is_authenticated %}
+                    <li class="nav-item">
+                        <span class="nav-link disabled" href="#">{{ request.user }}</span>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href=" {% url 'logout' %}">{% trans 'Logout' %}</a>
+                    </li>
+                {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href=" {% url 'login' %}">{% trans 'Login' %}</a>
+                    </li>
+                {% endif %}
+
+            </ul>
+
+
+        </div>
+    </div>
+</nav>
+<hr>
+
+<!--end nav-->
+

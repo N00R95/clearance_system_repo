@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block content %}
+
+    <h1 class="text-center font-weight-bold">{% trans 'Approvals List' %}</h1>
+    <div class="container">
+        <form method="get">
+            {% csrf_token %}
+            <input
+                    name="search"
+                    class="form-control"
+                    id="search"
+                    type="text"
+                    value="{{ search }}"
+                    placeholder="Search..  "
+            />
+
+        </form>
+
+        <br/>
+
+
+        <table class="table table-bordered table-striped text-capitalize text-center">
+            <thead>
+            <tr>
+                <th>{% trans 'Clearance Number' %}</th>
+                <th>{% trans 'Name' %}</th>
+                <th>{% trans 'Employee Number' %}</th>
+                <th>{% trans 'Status' %}</th>
+                <th>{% trans 'Details' %}</th>
+            </tr>
+            </thead>
+            <tbody id="myTable">
+            {% for approval in approvals %}
+
+                <tr>
+                    <td>
+                        {{ approval.clearance.id }}
+                    </td>
+                    <td>
+                        {{ approval.clearance.full_name }}
+                    </td>
+                    <td>
+                        {{ approval.clearance.employee_number }}
+                    </td>
+                    <td>
+                        {% trans approval.status %}
+                    </td>
+                    <td>
+                        <a class="btn btn-md btn-primary newreq"
+                           href="{% url 'core:manager-update-approval' approval.id %}"
+                           role="button">{% trans 'Check' %}&raquo;</a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $("#myInput").on("keyup", function () {
+                var value = $(this).val().toLowerCase();
+                $("#myTable tr").filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+                });
+            });
+        });
+    </script>
+
+{% endblock %}
