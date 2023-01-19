@@ -1,0 +1,144 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block content %}
+    <style>
+
+        td:first-child {
+            font-weight: bold;
+
+        }
+
+    </style>
+
+
+    <h1>Cofirm Clearance Status تأكيد حالة الطلب </h1>
+
+
+
+    <div class="container">
+         <div class="card">
+            <div class="card-header"><b>{% trans 'Clearance Info' %} </b></div>
+
+            <div class="card-body">
+                <table class="table table-responsive">
+
+                    <tbody>
+                    <tr>
+                        <td>{% trans 'Clearance ID' %} </td>
+                        <td>{{ clearance.id }}</td>
+                    </tr>
+                    <tr>
+                        <td>{% trans 'Clearance Status' %}</td>
+                        <td>{% trans clearance.status %}</td>
+                    </tr>
+                    <tr>
+                        <td>{% trans 'Full Name' %}</td>
+                        <td>{{ clearance.full_name }}</td>
+                    </tr>
+                    <tr>
+                        <td> {% trans 'Employee Number' %}</td>
+                        <td>{{ clearance.employee_number }}</td>
+                    </tr>
+                    <tr>
+                        <td>{% trans 'Gender' %}</td>
+                        <td>{% trans clearance.gender %}</td>
+                    </tr>
+                    <tr>
+                        <td>{% trans 'Clearance type' %}</td>
+                        <td>{% trans clearance.clearance_type %}</td>
+                    </tr>
+                    <tr>
+                        <td>{% trans 'Acknowledgment Number' %}</td>
+                        <td>{{ clearance.acknowledgment_number|default_if_none:"" }}</td>
+                    </tr>
+                    <tr>
+                        <td>{% trans 'Start Date' %}</td>
+                        <td>{{ clearance.start_date }}</td>
+                    </tr>
+                    <tr>
+                        <td>{% trans 'End Date' %}</td>
+                        <td>{{ clearance.end_date }}</td>
+                    </tr>
+                    <tr>
+                        <td>{% trans 'Job Title' %}</td>
+                        <td>{% trans clearance.job_title %}</td>
+                    </tr>
+                    <tr>
+                        <td>{% trans 'Department' %}</td>
+                        {% if LANGUAGE_CODE == 'en' %}
+                            <td>{{ clearance.department.name_en }}</td>
+                        {% else %}
+                            <td>{{ clearance.department.name_ar }}</td>
+                        {% endif %}
+
+                    </tr>
+                    <tr>
+                        <td>{% trans 'Nationality' %}</td>
+                        <td>{{ clearance.nationality }}</td>
+                    </tr>
+                    <tr>
+                        <td>{% trans 'Phone Number' %}</td>
+                        <td>{{ clearance.phone_number }}</td>
+                    </tr>
+                    <tr>
+                        <td>{% trans 'attachments' %}</td>
+                        <td>
+                            {% if clearance.attachment %}
+                                <a href={{ clearance.attachment.url }}> Download </a>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>{% trans 'Notes' %}</td>
+                        <td>{{ clearance.notes }}</td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+
+    <form class="modal-content" method="post">
+        {% csrf_token %}
+        <div class="container">
+
+            <label for="status">{%trans Status %} </label>
+            {% if approval.status == "Approved" %}
+                <select name="" id="" disabled>
+                    <option value="Approved">{%trans 'Approved' %}</option>
+                </select>
+                <input name="status" hidden value="Approved">
+            {% else %}
+                <select name="status" id="status">
+                    <option value="Pending">{% trans 'Pending' %}</option>
+                    <option value="Approved">{% trans 'Approved' %} </option>
+                    {% if request.user.department.name_en == "Human Resources" %}
+                        <option value="Rejected">{% trans "Rejected" %} </option>
+                    {% endif %}
+                </select>
+            {% endif %}
+
+
+            <p class="full-width">
+                <small class="text-danger">
+                    <label for=""> الرجاء كتابة السبب في حال الرفض او التعليق Please write the
+                        reason in the event of
+                        rejection or comment.</label></small>
+                {{ form.notes }}
+            </p>
+
+            <button type="submit" class="btn btn-lg btn-success">{% trans "Submit" %} </button>
+        </div>
+    </form>
+
+
+    <br>
+
+
+
+
+
+{% endblock %}

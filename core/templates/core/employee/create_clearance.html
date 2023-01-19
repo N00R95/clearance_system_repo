@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block content %}
+    {% if form.errors %}
+        <div class="container">
+            <div class="alert alert-danger" role="alert">
+                {{ form.errors }}
+            </div>
+        </div>
+    {% endif %}
+    <form style="border:1px solid #ccc" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="container">
+            <h1>{% trans 'New Clearance' %}</h1>
+
+
+            <label for="id_full_name"> <b>{% trans 'Full Name' %}</b></label>
+            {{ form.full_name }}
+            <label for="id_employee_number"> <b>{% trans 'Employee Number' %}</b></label>
+            {{ form.employee_number }}<br>
+            <br>
+            <label for="id-gender"><b>{% trans 'Gender' %}</b></label>
+            {{ form.gender }}<br>
+            <br>
+            <label for="clearancetype"><b>{% trans 'Clearance type' %}</b></label>
+            {{ form.clearance_type }}<br>
+            <br>
+            <label for="id_acknowledgment_number"> {% trans 'Acknowledgment Number' %}</label>
+            {{ form.acknowledgment_number }}<br>
+            <br>
+            <label for="id_start_date"> <b>{% trans 'Start Date' %}</b></label>
+            {{ form.start_date }}<br>
+            <br>
+            <label for="id_end_date"> <b>{% trans 'End Date' %}</b></label>
+            {{ form.end_date }}<br>
+            <br>
+            <label for="id_job_title"> <b>{% trans 'Job Title' %}</b> </label>
+            {{ form.job_title }}<br>
+            <br>
+            <label for="id_department"><b>{% trans 'Department' %}</b></label>
+            {{ form.department }}<br>
+            <br>
+
+
+            <label for="id_nationality"><b>{% trans 'Nationality' %}</b></label>
+            {{ form.nationality }}<br>
+            <br>
+
+            <label for="id_phone_number"> <b>{% trans 'Phone Number' %}</b></label>
+            {{ form.phone_number }}<br>
+            <br>
+            <label for="id_attachment"><b>{% trans 'attachments' %}</b></label>
+            {{ form.attachment }}<br>
+            <br>
+
+
+            <label for="id_notes"> <b>{% trans 'Notes' %}</b></label>
+            {{ form.notes }}<br>
+            <br>
+
+
+            <p>{% trans 'By creating a new request you agree to our' %}<a href="#"
+                                                                          style="color:dodgerblue">{% trans 'Terms & Privacy' %}</a>.
+            </p>
+
+            <div class="clearfix">
+                <button type="reset" class="cancelbtn">{% trans 'Cancel' %} </button>
+                <button type="submit" class="submitbtn">{% trans 'Submit' %} </a> </button>
+            </div>
+        </div>
+    </form>
+
+
+    <script>
+
+
+        function myFunction() {
+
+            alert("The form was submitted successfully");
+        }
+
+        function disableDropdown() {
+            document.getElementById("  ").setAttribute("disabled", "disabled");
+        }
+
+
+    </script>
+
+
+{% endblock %}

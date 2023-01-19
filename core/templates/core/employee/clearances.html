@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load custom_tags %}
+{% load i18n %}
+{% block content %}
+
+    <hr>
+    <div class="container-fluid col-md-8 offset-md-2 my-5 rounded border border-secondary">
+        <table class="table  table-hover  ">
+            <thead>
+            <tr>
+                <th>{% trans 'Clearance Number' %}</th>
+                <th>{% trans 'Status' %}</th>
+                <th>{% trans 'Creation Date' %}</th>
+                <th>{% trans 'Check' %}</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for clearance  in  clearances %}
+                <tr class=" text-center">
+                    <td>{{ clearance.id }}</td>
+                    <td><i class="fa-solid {{ clearance.status|get_status_class }}" id="req"></i><b>{% trans clearance.status %}</b>
+                    </td>
+
+                    <td>{{ clearance.created }}</td>
+                    <td>
+                        <a class="btn btn-sm btn-primary newreq"
+                           href="{% url 'core:employee-show-clearance' clearance.id %}"
+                           role="button" target="_blank">{% trans 'Check' %} &raquo;</a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+
+        </table>
+    </div>
+
+
+
+{% endblock %}

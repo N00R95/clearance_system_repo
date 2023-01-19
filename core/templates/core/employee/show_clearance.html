@@ -1,0 +1,133 @@
+{% extends 'base.html' %}
+{% load custom_tags %}
+{% load i18n %}
+
+{% block content %}
+
+    <div class="container-fluid col-md-8 offset-md-2 my-5">
+        {% if clearance.status == "Approved" %}
+            <a class="btn btn-success mb-1" href="{% url 'core:employee-print-clearance' clearance.id %} ">Print</a>
+        {% endif %}
+        <div class="card">
+            <div class="card-header"><b>{% trans 'Clearance Info' %} </b></div>
+
+            <div class="card-body">
+                <table class="table table-responsive">
+
+                    <tbody>
+                    <tr>
+                        <td>{% trans 'Clearance ID' %} </td>
+                        <td>{{ clearance.id }}</td>
+                    </tr>
+                    <tr>
+                        <td>{% trans 'Clearance Status' %}</td>
+                        <td>{% trans clearance.status %}</td>
+                    </tr>
+                    <tr>
+                        <td>{% trans 'Full Name' %}</td>
+                        <td>{{ clearance.full_name }}</td>
+                    </tr>
+                    <tr>
+                        <td> {% trans 'Employee Number' %}</td>
+                        <td>{{ clearance.employee_number }}</td>
+                    </tr>
+                    <tr>
+                        <td>{% trans 'Gender' %}</td>
+                        <td>{% trans clearance.gender %}</td>
+                    </tr>
+                    <tr>
+                        <td>{% trans 'Clearance type' %}</td>
+                        <td>{% trans clearance.clearance_type %}</td>
+                    </tr>
+                    <tr>
+                        <td>{% trans 'Acknowledgment Number' %}</td>
+                        <td>{{ clearance.acknowledgment_number|default_if_none:"" }}</td>
+                    </tr>
+                    <tr>
+                        <td>{% trans 'Start Date' %}</td>
+                        <td>{{ clearance.start_date }}</td>
+                    </tr>
+                    <tr>
+                        <td>{% trans 'End Date' %}</td>
+                        <td>{{ clearance.end_date }}</td>
+                    </tr>
+                    <tr>
+                        <td>{% trans 'Job Title' %}</td>
+                        <td>{% trans clearance.job_title %}</td>
+                    </tr>
+                    <tr>
+                        <td>{% trans 'Department' %}</td>
+                        {% if LANGUAGE_CODE == 'en' %}
+                            <td>{{ clearance.department.name_en }}</td>
+                        {% else %}
+                            <td>{{ clearance.department.name_ar }}</td>
+                        {% endif %}
+
+                    </tr>
+                    <tr>
+                        <td>{% trans 'Nationality' %}</td>
+                        <td>{{ clearance.nationality }}</td>
+                    </tr>
+                    <tr>
+                        <td>{% trans 'Phone Number' %}</td>
+                        <td>{{ clearance.phone_number }}</td>
+                    </tr>
+                    <tr>
+                        <td>{% trans 'attachments' %}</td>
+                        <td>
+                            {% if clearance.attachment %}
+                                <a href={{ clearance.attachment.url }}> Download </a>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>{% trans 'Notes' %}</td>
+                        <td>{{ clearance.notes }}</td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="container-fluid col-md-8 offset-md-2 my-5 rounded border border-secondary">
+
+        <table class="table text-center">
+            <thead>
+            <tr>
+                <th>{% trans 'Notes' %}</th>
+                <th>{% trans 'Status' %}</th>
+                <th>{% trans 'Department' %}</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            {% for approval in approvals %}
+                <tr>
+                    {% if approval.notes %}
+                        <td>{{ approval.notes }}</td>
+                    {% else %}
+                        <td></td>
+                    {% endif %}
+
+                    <td><i class="fa-solid {{ approval.status|get_status_class }}"></i><b
+                            class="mx-1">{% trans approval.status %}</b>
+                    </td>
+
+                    {% if LANGUAGE_CODE == 'en' %}
+
+                        <td><b> {{ approval.department.name_en }}</b></td>
+                    {% else %}
+                        <td><b> {{ approval.department.name_ar }}</b></td>
+                    {% endif %}
+                </tr>
+
+            {% endfor %}
+
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}

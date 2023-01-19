@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+    <header>
+        <div>
+            <img src="{% static '/images/mat.jpeg' %}" alt="">
+        </div>
+
+    </header>
+
+    <main class="container-fluid">
+
+        <div class="container p-5">
+            {% if request.user.is_authenticated %}
+                <div class="  rounded col-auto p-3 m-3  mt-5 butt">
+                    <h1><i class="fa-solid fa-bars-progress"></i></h1>
+                    <p class="lead ">
+                    <h3>{% trans 'Approvals' %}</h3> </p>
+                    <a class="btn btn-lg btn-success newreq" href="{% url 'core:manager-approvals' %}"
+                       role="button"
+                       target="_blank">{% trans 'Approvals' %} &raquo;</a>
+                </div>
+            {% else %}
+                <div class="rounded col-auto p-3 m-3 mt-5  butt">
+                    <h1><i class="fa-solid fa-user-plus"></i></h1>
+                    <p class="lead ">
+                    <h3>{% trans 'New Clearance' %}</h3> </p>
+                    <a class="btn btn-lg btn-success newreq" href=" {% url 'core:employee-create-clearance' %} "
+                       role="button"
+                       target="_blank">{% trans 'New Clearance' %} &raquo;</a>
+                </div>
+                <div class="  rounded col-auto p-3 m-3 mt-5 butt ">
+                    <h1><i class="fa-solid fa-user-group"></i></h1>
+                    <p class="lead">
+                    <h3>{% trans 'Login' %}</h3>
+                    </p>
+                    <a class="btn btn-lg btn-success newreq  " href="{% url 'login' %}"
+                       role="button">{% trans 'Login' %} &raquo;</a>
+                </div>
+
+                <div class="  rounded col-auto p-3 m-3  mt-5 butt">
+
+                    <h1><i class="fa-solid fa-bars-progress"></i></h1>
+                    <p class="lead ">
+                    <h3>{% trans 'Clearances' %}</h3> </p>
+                    <a class="btn btn-lg btn-success newreq" href="{% url 'core:employee-search-clearances' %}"
+                       role="button"
+                       target="_blank">{% trans 'Clearances' %} &raquo;</a>
+                </div>
+
+            {% endif %}
+
+
+        </div>
+
+    </main>
+
+{% endblock %}
